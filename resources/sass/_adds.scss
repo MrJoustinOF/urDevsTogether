@@ -1,0 +1,44 @@
+html {
+    overflow-x: hidden;
+}
+
+.img-responsive {
+    width: 70%;
+}
+
+.icon {
+    width: 20px;
+}
+
+.top-hero {
+    background-image: url(../../public/images/code.jpg);
+    background-size: cover;
+    background-position: top center;
+}
+
+.hero-welcome {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    height: 300px;
+}
+
+.search {
+    width: 25%;
+}
+
+@media (min-width: 0px) {
+    .search {
+        width: 100%;
+    }   
+}
+
+@media (min-width: 600px) {
+    .search {
+        width: 50%;
+    }   
+}
+
+@media (min-width: 1000px) {
+    .search {
+        width: 25%;
+    }   
+}
