@@ -43,6 +43,23 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="website"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Website') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="website" type="text"
+                                        class="form-control @error('website') is-invalid @enderror" name="website"
+                                        value="{{ old('website') }}" required autocomplete="website" autofocus>
+
+                                    @error('website')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Area') }}</label>
 
                                 <div class="col-md-6">
@@ -53,6 +70,8 @@
                                         <option value="Mobile-Dev">Mobile Dev</option>
                                         <option value="Game-Dev">Game Dev</option>
                                         <option value="Machine-Learning">Machine Learning</option>
+                                        <option value="Data-Science">Data-Science</option>
+                                        <option value="IT-Security">IT-Security</option>
                                     </select>
 
                                     @error('area')

@@ -11,12 +11,14 @@
             </div>
             <div class="col-md-7 mt-5 mt-md-0">
                 <h2 class="text-center mb-2">{{ $profile->user->name }}</h2>
-                <h3>Area: {{ $profile->user->area }}</h2>
-                    <div class="description">
-                        <h3>Description:</h3>
-                        {{ $profile->description }}
-                    </div>
-
+                <h3>Area: {{ $profile->user->area }}</h3>
+                <div class="description">
+                    <h3>Description:</h3>
+                    {{ $profile->description }}
+                </div>
+                <h3 class="mt-4">Website: </h3>
+                <p>{{ $profile->user->website }}</p>
+                <a href="{{ $profile->user->website }}" target="BLANK" class="btn btn-dark d-block">Visit Website</a>
             </div>
         </div>
     </div>
