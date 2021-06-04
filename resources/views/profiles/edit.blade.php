@@ -12,7 +12,7 @@
 
     <div class="row justify-content-center mt-5 mx-2">
         <div class="col-md-8 bg-white">
-            <form action="{{ route('profiles.update', ['profile' => $profile->id]) }}" method="POST"
+            <form action="{{ route('profiles.update', ['profile' => $profile->user_id]) }}" method="POST"
                 enctype="multipart/form-data" novalidate>
                 @csrf
                 @method('PUT')
@@ -59,6 +59,8 @@
                             <option value="Mobile-Dev">Mobile Dev</option>
                             <option value="Game-Dev">Game Dev</option>
                             <option value="Machine-Learning">Machine Learning</option>
+                            <option value="Data-Science">Data-Science</option>
+                            <option value="IT-Security">IT-Security</option>
                         </select>
 
                         @error('area')

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Profile;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -66,6 +67,7 @@ class ProfileController extends Controller
 
             $image_array = ['image' => $image_route];
         }
+
 
         auth()->user()->name = $data['name'];
         auth()->user()->area = $data['area'];
