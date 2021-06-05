@@ -63,7 +63,7 @@ class ProfileController extends Controller
         if ($request['image']) {
             $image_route = $request['image']->store('upload-profiles', 'public');
 
-            $img = Image::make(storage_path("app/public/") . $image_route)->fit(600, 600);
+            $img = Image::make(public_path("storage/") . $image_route)->fit(600, 600);
             $img->save();
 
             $image_array = ['image' => $image_route];
