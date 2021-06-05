@@ -59,7 +59,7 @@ class ProjectController extends Controller
 
         $image_route = $request['image']->store('upload-projects', 'public');
 
-        $img = Image::make(public_path("storage/{$image_route}"))->fit(1000, 550);
+        $img = Image::make(public_path("/storage/{$image_route}"))->fit(1000, 550);
         $img->save();
 
         auth()->user()->projects()->create([
@@ -120,7 +120,7 @@ class ProjectController extends Controller
         if (request('image')) {
             $image_route = $request['image']->store('upload-projects', 'public');
 
-            $img = Image::make(public_path("storage/{$image_route}"))->fit(1000, 550);
+            $img = Image::make(public_path("/storage/{$image_route}"))->fit(1000, 550);
             $img->save();
 
             $project->image = $image_route;

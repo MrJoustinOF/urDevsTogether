@@ -32,6 +32,21 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="text" name="website" id="website"
+                        class="form-control @error('website') is-invalid @enderror" placeholder="Your Website"
+                        value="{{ $profile->user->website }}">
+
+                    @error('website')
+
+                        <span class="invalid-feedback d-block" role="alert">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="description">Description</label><br>
                     <strong><span>Be sure to add your name in yor description, to be on the searchs!</span></strong>
                     <textarea name="description" id="description"

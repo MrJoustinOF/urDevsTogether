@@ -55,6 +55,7 @@ class ProfileController extends Controller
 
         $data = request()->validate([
             'name' => 'required',
+            'website' => 'required',
             'description' => 'required|min:10',
             'area' => 'required',
         ]);
@@ -62,7 +63,7 @@ class ProfileController extends Controller
         if ($request['image']) {
             $image_route = $request['image']->store('upload-profiles', 'public');
 
-            $img = Image::make(public_path("storage/{$image_route}"))->fit(600, 600);
+            $img = Image::make(public_path("/storage/{$image_route}"))->fit(600, 600);
             $img->save();
 
             $image_array = ['image' => $image_route];
@@ -70,10 +71,12 @@ class ProfileController extends Controller
 
 
         auth()->user()->name = $data['name'];
+        auth()->user()->website = $data['website'];
         auth()->user()->area = $data['area'];
         auth()->user()->save();
 
         unset($data['name']);
+        unset($data['website']);
         unset($data['area']);
 
         auth()->user()->profile()->update(array_merge($data, $image_array ?? []));
