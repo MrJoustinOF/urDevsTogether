@@ -13,7 +13,7 @@ class Project extends Model
         'title',
         'description',
         'url',
-        'image'
+        // 'image'
     ];
 
     public function author()

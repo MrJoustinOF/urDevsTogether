@@ -34,7 +34,7 @@
         <div class="owl-carousel owl-theme">
             @foreach ($profiles as $profile)
                 <div class="card my-4">
-                    <img src="/storage/{{ $profile->image }}" class="card-img-top" alt="">
+                    {{-- <img src="/storage/{{ $profile->image }}" class="card-img-top" alt=""> --}}
 
                     <div class="card-body">
                         <h3>{{ $profile->user->name }}</h3>
@@ -52,7 +52,7 @@
         <div class="owl-carousel owl-theme">
             @foreach ($oldests as $profile)
                 <div class="card my-4">
-                    <img src="/storage/{{ $profile->image }}" class="card-img-top" alt="">
+                    {{-- <img src="/storage/{{ $profile->image }}" class="card-img-top" alt=""> --}}
 
                     <div class="card-body">
                         <h3>{{ $profile->user->name }}</h3>

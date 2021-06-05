@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('url');
-            $table->string('image');
+            // $table->string('image');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });

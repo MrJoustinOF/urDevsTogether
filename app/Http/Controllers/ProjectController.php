@@ -54,19 +54,19 @@ class ProjectController extends Controller
             'title' => 'required|min:5',
             'description' => 'required|min:10',
             'url' => 'required',
-            'image' => 'required|image'
+            // 'image' => 'required|image'
         ]);
 
-        $image_route = $request['image']->store('upload-projects', 'public');
+        // $image_route = $request['image']->store('upload-projects', 'public');
 
-        $img = Image::make(public_path("/storage/{$image_route}"))->fit(1000, 550);
-        $img->save();
+        // $img = Image::make(public_path("/storage/{$image_route}"))->fit(1000, 550);
+        // $img->save();
 
         auth()->user()->projects()->create([
             'title' => $data['title'],
             'description' => $data['description'],
             'url' => $data['url'],
-            'image' => $image_route,
+            // 'image' => $image_route,
         ]);
 
 
@@ -117,14 +117,14 @@ class ProjectController extends Controller
         $project->description = $data['description'];
         $project->url = $data['url'];
 
-        if (request('image')) {
-            $image_route = $request['image']->store('upload-projects', 'public');
+        // if (request('image')) {
+        //     $image_route = $request['image']->store('upload-projects', 'public');
 
-            $img = Image::make(public_path("/storage/{$image_route}"))->fit(1000, 550);
-            $img->save();
+        //     $img = Image::make(public_path("/storage/{$image_route}"))->fit(1000, 550);
+        //     $img->save();
 
-            $project->image = $image_route;
-        }
+        //     $project->image = $image_route;
+        // }
 
         $project->save();
 

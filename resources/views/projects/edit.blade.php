@@ -61,23 +61,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="image">Choose an image</label>
-                    <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
-                    @error('image')
-
-                        <span class="invalid-feedback d-block" role="alert">
-                            {{ $message }}
-                        </span>
-
-                    @enderror
-
-                    <div class="mt-4">
-                        <p>Current image:</p>
-                        <img src="/storage/{{ $project->image }}" alt="" style="width: 250px">
-                    </div>
-                </div>
-
-                <div class="form-group">
                     <input type="submit" class="btn btn-dark" value="Edit">
                 </div>
             </form>

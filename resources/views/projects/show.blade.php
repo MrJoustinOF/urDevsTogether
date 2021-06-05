@@ -7,7 +7,7 @@
         <h2 class="text-center mb-4">{{ $project->title }}</h2>
 
         <div class="project-image">
-            <img src="/storage/{{ $project->image }}" alt="" class="mx-auto d-block img-responsive">
+            {{-- <img src="/storage/{{ $project->image }}" alt="" class="mx-auto d-block img-responsive"> --}}
         </div>
 
         <div class="project-meta text-center mt-4">

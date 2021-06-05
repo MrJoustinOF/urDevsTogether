@@ -60,14 +60,15 @@ class ProfileController extends Controller
             'area' => 'required',
         ]);
 
-        if ($request['image']) {
-            $image_route = $request['image']->store('upload-profiles', 'public');
+        // When we use anoter hosthing (no heroku)
+        // if ($request['image']) {
+        //     $image_route = $request['image']->store('upload-profiles', 'public');
 
-            $img = Image::make(storage_path("app/public/") . $image_route)->fit(600, 600);
-            $img->save();
+        //     $img = Image::make(storage_path("app/public/") . $image_route)->fit(600, 600);
+        //     $img->save();
 
-            $image_array = ['image' => $image_route];
-        }
+        //     $image_array = ['image' => $image_route];
+        // }
 
 
         auth()->user()->name = $data['name'];
@@ -79,7 +80,9 @@ class ProfileController extends Controller
         unset($data['website']);
         unset($data['area']);
 
-        auth()->user()->profile()->update(array_merge($data, $image_array ?? []));
+        // For images
+        // auth()->user()->profile()->update(array_merge($data, $image_array ?? []));
+        auth()->user()->profile()->update($data);
 
         return redirect()->action([ProjectController::class, 'index']);
     }

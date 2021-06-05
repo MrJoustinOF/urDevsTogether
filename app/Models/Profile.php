@@ -11,7 +11,7 @@ class Profile extends Model
 
     protected $fillable = [
         'description',
-        'image'
+        // 'image'
     ];
 
     public function user()
